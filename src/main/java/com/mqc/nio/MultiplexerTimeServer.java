@@ -68,6 +68,7 @@ public class MultiplexerTimeServer implements  Runnable {
                 t.printStackTrace();
             }
         }
+        //设置stop为true后 可以关闭监听
         if (selector!=null){
             try{
                 selector.close();
@@ -86,6 +87,7 @@ public class MultiplexerTimeServer implements  Runnable {
                 ServerSocketChannel ssc= (ServerSocketChannel) key.channel();
                 SocketChannel sc=ssc.accept();
                 //设置channel为非阻塞模式
+
                 sc.configureBlocking(false);
                 sc.register(selector,SelectionKey.OP_READ);
             }
