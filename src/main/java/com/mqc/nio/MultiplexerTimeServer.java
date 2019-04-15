@@ -86,6 +86,7 @@ public class MultiplexerTimeServer implements  Runnable {
                 ServerSocketChannel ssc= (ServerSocketChannel) key.channel();
                 SocketChannel sc=ssc.accept();
                 //设置channel为非阻塞模式
+
                 sc.configureBlocking(false);
                 sc.register(selector,SelectionKey.OP_READ);
             }
