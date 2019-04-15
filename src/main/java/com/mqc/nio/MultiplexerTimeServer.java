@@ -68,6 +68,7 @@ public class MultiplexerTimeServer implements  Runnable {
                 t.printStackTrace();
             }
         }
+        //设置stop为true后 可以关闭监听
         if (selector!=null){
             try{
                 selector.close();
