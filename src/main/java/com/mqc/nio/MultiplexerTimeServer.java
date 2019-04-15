@@ -80,7 +80,7 @@ public class MultiplexerTimeServer implements  Runnable {
 
     public void handleInput(SelectionKey key) throws IOException {
         if (key.isValid()){
-            //如果收到的是accept类型 ，说明客户端发起了连接请求， 需要将对应的channel注册到到selector上
+            //如果收到的是accept类型，说明客户端发起了连接请求，需要将对应的channel注册到到selector上
             //完成这个阶段后 相当于完成tcp的三次握手
             if(key.isAcceptable()){
                 ServerSocketChannel ssc= (ServerSocketChannel) key.channel();
