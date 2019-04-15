@@ -97,6 +97,7 @@ public class MultiplexerTimeServer implements  Runnable {
                 int readBytes=sc.read(readBuffer);
                 if (readBytes>0){
                     //切换读写模式
+					
                     readBuffer.flip();
                     byte[] bytes=new byte[readBuffer.remaining()];
                     readBuffer.get(bytes);
