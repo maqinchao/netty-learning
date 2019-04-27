@@ -16,6 +16,6 @@ public class AcceptCompletionHandler implements CompletionHandler<AsynchronousSo
 
     @Override
     public void failed(Throwable exc, AsyncTimeServerHandler attachment) {
-
+        attachment.countDownLatch.countDown();
     }
 }
